@@ -1,31 +1,36 @@
+from ultralytics import YOLO
 import cv2
 
-# 1. Initialize the camera (0 is usually the default built-in webcam)
+# 1. Load the model (YOLOv8 nano is very fast for live video)
+# It will automatically download the 'yolov8n.pt' file on first run
+model = YOLO('yolov8n.pt') 
+
+# 2. Move the model to the GPU
+model.to('cuda')
+
+# 3. Initialize the webcam
 cap = cv2.VideoCapture(0)
 
-# Check if the webcam is opened correctly
-if not cap.isOpened():
-    print("Error: Could not open video device.")
-    exit()
+print("Starting YOLO GPU detection... Press 'q' to stop.")
 
-print("Camera turned on. Press 'q' to quit.")
-
-while True:
-    # 2. Capture frame-by-line
-    ret, frame = cap.read()
-
-    # If the frame was captured successfully, ret will be True
-    if not ret:
-        print("Error: Can't receive frame. Exiting...")
+while cap.isOpened():
+    success, frame = cap.read()
+    if not success:
         break
 
-    # 3. Display the resulting frame
-    cv2.imshow('Webcam Feed', frame)
+    # 4. Run inference
+    # classes=[0] restricts detection specifically to "person"
+    results = model(frame, stream=True, conf=0.75, classes=[0], device=0, verbose=False)
 
-    # 4. Wait for the 'q' key to be pressed to exit the loop
+    # 5. Visualize the results on the frame
+    for r in results:
+        annotated_frame = r.plot()
+
+    # 6. Display the output
+    cv2.imshow("Camera Feed", annotated_frame)
+
     if cv2.waitKey(1) & 0xFF == ord('q'):
         break
 
-# 5. Release the capture and close windows
 cap.release()
 cv2.destroyAllWindows()
