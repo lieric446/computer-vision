@@ -1,1 +1,5 @@
 *.pt
+
+*.plist
+*.xcuserstate
+
