@@ -1,8 +1,8 @@
 //
 //  ContentView.swift
-//  iphoneCameraTest
+//  IphoneHeightDetection
 //
-//  Created by Eric Li on 12/29/25.
+//  Created by Eric Li on 12/30/25.
 //
 
 import SwiftUI

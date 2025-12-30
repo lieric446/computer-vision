@@ -7,19 +7,19 @@
 	objects = {
 
 /* Begin PBXFileReference section */
-		A7C630792F030CFE00992C13 /* iphoneCameraTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iphoneCameraTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A7C630AA2F04769200992C13 /* IphoneHeightDetection.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IphoneHeightDetection.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		A7C6307B2F030CFE00992C13 /* iphoneCameraTest */ = {
+		A7C630AC2F04769200992C13 /* IphoneHeightDetection */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			path = iphoneCameraTest;
+			path = IphoneHeightDetection;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		A7C630762F030CFE00992C13 /* Frameworks */ = {
+		A7C630A72F04769200992C13 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -29,18 +29,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		A7C630702F030CFE00992C13 = {
+		A7C630A12F04769200992C13 = {
 			isa = PBXGroup;
 			children = (
-				A7C6307B2F030CFE00992C13 /* iphoneCameraTest */,
-				A7C6307A2F030CFE00992C13 /* Products */,
+				A7C630AC2F04769200992C13 /* IphoneHeightDetection */,
+				A7C630AB2F04769200992C13 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		A7C6307A2F030CFE00992C13 /* Products */ = {
+		A7C630AB2F04769200992C13 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				A7C630792F030CFE00992C13 /* iphoneCameraTest.app */,
+				A7C630AA2F04769200992C13 /* IphoneHeightDetection.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -48,64 +48,64 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		A7C630782F030CFE00992C13 /* iphoneCameraTest */ = {
+		A7C630A92F04769200992C13 /* IphoneHeightDetection */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = A7C630842F030D0000992C13 /* Build configuration list for PBXNativeTarget "iphoneCameraTest" */;
+			buildConfigurationList = A7C630B52F04769400992C13 /* Build configuration list for PBXNativeTarget "IphoneHeightDetection" */;
 			buildPhases = (
-				A7C630752F030CFE00992C13 /* Sources */,
-				A7C630762F030CFE00992C13 /* Frameworks */,
-				A7C630772F030CFE00992C13 /* Resources */,
+				A7C630A62F04769200992C13 /* Sources */,
+				A7C630A72F04769200992C13 /* Frameworks */,
+				A7C630A82F04769200992C13 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
-				A7C6307B2F030CFE00992C13 /* iphoneCameraTest */,
+				A7C630AC2F04769200992C13 /* IphoneHeightDetection */,
 			);
-			name = iphoneCameraTest;
+			name = IphoneHeightDetection;
 			packageProductDependencies = (
 			);
-			productName = iphoneCameraTest;
-			productReference = A7C630792F030CFE00992C13 /* iphoneCameraTest.app */;
+			productName = IphoneHeightDetection;
+			productReference = A7C630AA2F04769200992C13 /* IphoneHeightDetection.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		A7C630712F030CFE00992C13 /* Project object */ = {
+		A7C630A22F04769200992C13 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 2620;
 				LastUpgradeCheck = 2620;
 				TargetAttributes = {
-					A7C630782F030CFE00992C13 = {
+					A7C630A92F04769200992C13 = {
 						CreatedOnToolsVersion = 26.2;
 					};
 				};
 			};
-			buildConfigurationList = A7C630742F030CFE00992C13 /* Build configuration list for PBXProject "iphoneCameraTest" */;
+			buildConfigurationList = A7C630A52F04769200992C13 /* Build configuration list for PBXProject "IphoneHeightDetection" */;
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 				Base,
 			);
-			mainGroup = A7C630702F030CFE00992C13;
+			mainGroup = A7C630A12F04769200992C13;
 			minimizedProjectReferenceProxies = 1;
 			preferredProjectObjectVersion = 77;
-			productRefGroup = A7C6307A2F030CFE00992C13 /* Products */;
+			productRefGroup = A7C630AB2F04769200992C13 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				A7C630782F030CFE00992C13 /* iphoneCameraTest */,
+				A7C630A92F04769200992C13 /* IphoneHeightDetection */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		A7C630772F030CFE00992C13 /* Resources */ = {
+		A7C630A82F04769200992C13 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -115,7 +115,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		A7C630752F030CFE00992C13 /* Sources */ = {
+		A7C630A62F04769200992C13 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -125,7 +125,7 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		A7C630822F030D0000992C13 /* Debug */ = {
+		A7C630B32F04769400992C13 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -188,7 +188,7 @@
 			};
 			name = Debug;
 		};
-		A7C630832F030D0000992C13 /* Release */ = {
+		A7C630B42F04769400992C13 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -244,7 +244,7 @@
 			};
 			name = Release;
 		};
-		A7C630852F030D0000992C13 /* Debug */ = {
+		A7C630B62F04769400992C13 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -263,7 +263,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = lieric446.iphoneCameraTest;
+				PRODUCT_BUNDLE_IDENTIFIER = lieric446.IphoneHeightDetection;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
@@ -275,7 +275,7 @@
 			};
 			name = Debug;
 		};
-		A7C630862F030D0000992C13 /* Release */ = {
+		A7C630B72F04769400992C13 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -294,7 +294,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = lieric446.iphoneCameraTest;
+				PRODUCT_BUNDLE_IDENTIFIER = lieric446.IphoneHeightDetection;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
@@ -309,25 +309,25 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		A7C630742F030CFE00992C13 /* Build configuration list for PBXProject "iphoneCameraTest" */ = {
+		A7C630A52F04769200992C13 /* Build configuration list for PBXProject "IphoneHeightDetection" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				A7C630822F030D0000992C13 /* Debug */,
-				A7C630832F030D0000992C13 /* Release */,
+				A7C630B32F04769400992C13 /* Debug */,
+				A7C630B42F04769400992C13 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		A7C630842F030D0000992C13 /* Build configuration list for PBXNativeTarget "iphoneCameraTest" */ = {
+		A7C630B52F04769400992C13 /* Build configuration list for PBXNativeTarget "IphoneHeightDetection" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				A7C630852F030D0000992C13 /* Debug */,
-				A7C630862F030D0000992C13 /* Release */,
+				A7C630B62F04769400992C13 /* Debug */,
+				A7C630B72F04769400992C13 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = A7C630712F030CFE00992C13 /* Project object */;
+	rootObject = A7C630A22F04769200992C13 /* Project object */;
 }
