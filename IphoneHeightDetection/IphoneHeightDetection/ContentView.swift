@@ -6,19 +6,15 @@
 //
 
 import SwiftUI
+import AVFoundation
 
 struct ContentView: View {
+    @StateObject private var cameraVM = CameraViewModel()
+
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
-        }
-        .padding()
+        CameraPreview(session: cameraVM.session)
+            .ignoresSafeArea()
     }
 }
 
-#Preview {
-    ContentView()
-}
+
