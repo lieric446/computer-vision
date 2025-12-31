@@ -8,36 +8,28 @@
 import SwiftUI
 import AVFoundation
 import Combine
+import Vision
 
-class CameraViewModel: ObservableObject {
+class CameraViewModel: NSObject, ObservableObject {
     let session = AVCaptureSession()
+    private let videoOutput = AVCaptureVideoDataOutput()
 
-    init() {
+    @Published var personBoxes: [CGRect] = []
+
+    override init() {
+        super.init()
         checkPermissions()
     }
 
     private func checkPermissions() {
-        let status = AVCaptureDevice.authorizationStatus(for: .video)
-        print("Camera auth status:", status.rawValue)
-
-        if status == .authorized {
+        if AVCaptureDevice.authorizationStatus(for: .video) == .authorized {
             setupSession()
-        } else if status == .notDetermined {
-            AVCaptureDevice.requestAccess(for: .video) { granted in
-                if granted {
-                    DispatchQueue.main.async {
-                        self.setupSession()
-                    }
-                }
-            }
         }
     }
 
     private func setupSession() {
-        guard session.inputs.isEmpty else { return }
-
         session.beginConfiguration()
-        session.sessionPreset = .photo
+        session.sessionPreset = .high
 
         guard
             let device = AVCaptureDevice.default(.builtInWideAngleCamera,
@@ -45,18 +37,39 @@ class CameraViewModel: ObservableObject {
                                                  position: .back),
             let input = try? AVCaptureDeviceInput(device: device),
             session.canAddInput(input)
-        else {
-            print("Failed to create camera input")
-            session.commitConfiguration()
-            return
-        }
+        else { return }
 
         session.addInput(input)
-        session.commitConfiguration()
 
-        DispatchQueue.global(qos: .userInitiated).async {
-            self.session.startRunning()
-            print("Session running:", self.session.isRunning)
+        videoOutput.setSampleBufferDelegate(self,
+                                            queue: DispatchQueue(label: "video.queue"))
+        session.addOutput(videoOutput)
+
+        session.commitConfiguration()
+        session.startRunning()
+    }
+}
+
+extension CameraViewModel: AVCaptureVideoDataOutputSampleBufferDelegate {
+
+    func captureOutput(_ output: AVCaptureOutput,
+                       didOutput sampleBuffer: CMSampleBuffer,
+                       from connection: AVCaptureConnection) {
+
+        guard let pixelBuffer = CMSampleBufferGetImageBuffer(sampleBuffer) else { return }
+
+        let request = VNDetectHumanRectanglesRequest { request, _ in
+            guard let results = request.results as? [VNHumanObservation] else { return }
+
+            DispatchQueue.main.async {
+                self.personBoxes = results.map { $0.boundingBox }
+            }
         }
+        request.upperBodyOnly = false
+
+        let handler = VNImageRequestHandler(cvPixelBuffer: pixelBuffer,
+                                            orientation: .right,
+                                            options: [:])
+        try? handler.perform([request])
     }
 }
